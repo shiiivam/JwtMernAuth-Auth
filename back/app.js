@@ -10,4 +10,7 @@ const mongo_url = process.env.MONGODB_CONN;
 
 mongoose.connect(mongo_url,{useNewUrlParser: true, useUnifiedTopology: true},()=>console.log('connected to database'));
 
+const userRouter = require('./routes/User');
+app.use('/user',userRouter)
+
 app.listen(4000,console.log('server up and running'));
